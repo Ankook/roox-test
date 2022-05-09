@@ -20,7 +20,6 @@ const Input: React.FC<InputProps> = ({
   className,
   onChange,
 }) => {
-  console.log(className);
   if (type === "textarea") {
     return (
       <div className={styles.textAreaComponentContainer}>
