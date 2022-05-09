@@ -18,8 +18,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<UsersContainer />} />
-            <Route path="/users" element={<UsersContainer />} />
-            <Route path="/users/:id" element={<ProfileContainer />} />
+            <Route path="/:id" element={<ProfileContainer />} />
           </Routes>
         </BrowserRouter>
       </div>

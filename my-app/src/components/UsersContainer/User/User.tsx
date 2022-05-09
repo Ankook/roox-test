@@ -29,7 +29,7 @@ const User: FC<UserProps> = ({ name, city, company, id }) => {
           </div>
         </div>
         <span className={styles.more}>
-          <NavLink className={styles.navLink} to={"/users/" + id}>
+          <NavLink className={styles.navLink} to={"/"+ id}>
             Подробнее
           </NavLink>
         </span>
