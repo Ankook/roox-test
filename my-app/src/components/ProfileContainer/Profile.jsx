@@ -12,8 +12,6 @@ const Profile = ({ data }) => {
     dispatch(setEditMode());
   }
 
-  console.log("Пропсы комопненты Profile");
-  console.log(data);
   return (
     <div className={styles.profile}>
       <div className={styles.profilePanel}>

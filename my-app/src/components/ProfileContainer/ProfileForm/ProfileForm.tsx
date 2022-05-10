@@ -35,12 +35,7 @@ interface ProfileFormProps {
 
 const ProfileForm: React.FC<ProfileFormProps> = ({ data }) => {
   const profileData = { ...data };
-
-  console.log("Пропсы компоненты ProfileForm");
-  console.log(profileData);
   const editMode = useAppSelector((state) => state.editMode.editMode);
-  console.log(editMode);
-
   const [isFormValid, setFormValid] = useState(true);
 
   const inputValid = (
@@ -88,7 +83,6 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ data }) => {
   });
 
   const handleSubmit = (event: React.FormEvent) => {
-    console.log("Нажали на кнопку handleSubmit");
     event.preventDefault();
 
     inputsScheme.forEach((item: any) => {

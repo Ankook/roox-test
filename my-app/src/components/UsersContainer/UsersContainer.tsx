@@ -8,8 +8,6 @@ import Loader from "../Ui-kit/loader/loader";
 
 const UsersContainer: React.FC = () => {
   const users = useAppSelector((state) => state.users.users);
-  console.log("usersFromRedux");
-  console.log(users);
   const sortType = useAppSelector((state) => state.sort.sortType);
   const isLoad = useAppSelector((state) => state.users.isLoad);
   const [sortedUsers, setSortedUsers] = useState<Array<IUser>>([]);
@@ -18,10 +16,8 @@ const UsersContainer: React.FC = () => {
   const sortByType = (sortType: string, usersForSort: Array<IUser>): any => {
     if (sortType === "city") {
       setSortedUsers(usersForSort.sort(sortByCity));
-      console.log(usersForSort);
     } else if (sortType === "company") {
       setSortedUsers(usersForSort.sort(sortByCompanyName));
-      console.log(usersForSort);
     } else if (sortType === "none") {
       setSortedUsers(usersForSort);
     }
