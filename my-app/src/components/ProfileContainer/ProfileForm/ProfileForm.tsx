@@ -36,8 +36,7 @@ interface ProfileFormProps {
 const ProfileForm: React.FC<ProfileFormProps> = ({ data }) => {
   const profileData = { ...data };
   const editMode = useAppSelector((state) => state.editMode.editMode);
-  const [isFormValid, setFormValid] = useState(true);
-
+  
   const inputValid = (
     inputValue: any,
     nameInput: keyof ProfileInputErrorsState,
@@ -45,12 +44,11 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ data }) => {
       React.SetStateAction<ProfileInputErrorsState>
     >
   ) => {
-    if (!inputValue) {
+    if (inputValue == "") {
       setInputErrors((prev: ProfileInputErrorsState) => ({
         ...prev,
         [nameInput]: "true",
       }));
-      setFormValid(false);
     } else {
       setInputErrors((prev: ProfileInputErrorsState) => ({
         ...prev,
@@ -84,6 +82,8 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ data }) => {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    
+    
 
     inputsScheme.forEach((item: any) => {
       item.key !== "comment" &&
@@ -94,7 +94,8 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ data }) => {
         );
     });
 
-    if (isFormValid) {
+    
+    if (inputs.name && inputs.username && inputs.email && inputs.street && inputs.city && inputs.zipcode && inputs.phone && inputs.website) {
       console.log(JSON.stringify(inputs));
     }
   };
