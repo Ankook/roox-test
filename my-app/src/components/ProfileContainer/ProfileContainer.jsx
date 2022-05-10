@@ -4,6 +4,7 @@ import { useAppSelector } from "../../app/hooks";
 
 const ProfileContainer = () => {
   const { id } = useParams();
+  console.log(id);
   const { users } = useAppSelector((state) => state.users);
   const user = users.find((item) => item.id === +id);
 

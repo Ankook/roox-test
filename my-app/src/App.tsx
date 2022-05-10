@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/sidebar/Sidebar";
 import UsersContainer from "./components/UsersContainer/UsersContainer";
 import ProfileContainer from "./components/ProfileContainer/ProfileContainer";
+import Wrapper from "./components/Wrapper/Wrapper";
 
 function App() {
   const dispatch = useAppDispatch(); //Этот хук возвращает ссылку на dispatch-функцию из хранилища Redux
@@ -13,15 +14,14 @@ function App() {
 
   return (
     <div className="app">
-      <Sidebar />
-      <div className="app-wrapper-content">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<UsersContainer />} />
-            <Route path="/:id" element={<ProfileContainer />} />
+            <Route path="/" element={<Wrapper />}>
+              <Route index element={<UsersContainer />} />
+              <Route path=":id" element={<ProfileContainer/>}/>
+            </Route>
           </Routes>
         </BrowserRouter>
-      </div>
     </div>
   );
 }
