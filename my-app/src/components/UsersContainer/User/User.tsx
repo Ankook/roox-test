@@ -1,4 +1,4 @@
-import  { FC } from "react";
+import { FC } from "react";
 import styles from "./user.module.scss";
 import { NavLink } from "react-router-dom";
 
@@ -29,7 +29,7 @@ const User: FC<UserProps> = ({ name, city, company, id }) => {
           </div>
         </div>
         <span className={styles.more}>
-          <NavLink className={styles.navLink} to={"/"+ id}>
+          <NavLink className={styles.navLink} to={"/roox-test/" + id}>
             Подробнее
           </NavLink>
         </span>

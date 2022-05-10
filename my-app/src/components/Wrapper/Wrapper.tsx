@@ -3,14 +3,13 @@ import Sidebar from "../sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 import Main from "../Main/Main";
 
-
 const Wrapper = () => {
   return (
     <div className={styles.wrapper}>
       <Sidebar />
-      <Main/>
+      <Main />
     </div>
-  )
-}
+  );
+};
 
 export default Wrapper;

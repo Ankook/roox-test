@@ -48,7 +48,7 @@ const UsersContainer: React.FC = () => {
   return (
     <div className={styles.users}>
       <h1 className={styles.header}>Список пользователей</h1>
-      {isLoad && <Loader/>}
+      {isLoad && <Loader />}
       <div className={styles.users}>
         <Users data={sortedUsers} />
       </div>

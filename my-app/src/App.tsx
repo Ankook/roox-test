@@ -14,14 +14,14 @@ function App() {
 
   return (
     <div className="app">
-        <BrowserRouter>
-          <Routes>
-          <Route path={"/"} element={<Wrapper />}>
-              <Route index element={<UsersContainer />} />
-              <Route path=":id" element={<ProfileContainer />} />
+      <BrowserRouter>
+        <Routes>
+          <Route path={"/roox-test"} element={<Wrapper />}>
+            <Route index element={<UsersContainer />} />
+            <Route path=":id" element={<ProfileContainer />} />
           </Route>
-          </Routes>
-        </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
