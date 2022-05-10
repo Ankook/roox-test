@@ -16,10 +16,10 @@ function App() {
     <div className="app">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Wrapper />}>
+          <Route path={"/"} element={<Wrapper />}>
               <Route index element={<UsersContainer />} />
-              <Route path=":id" element={<ProfileContainer/>}/>
-            </Route>
+              <Route path=":id" element={<ProfileContainer />} />
+          </Route>
           </Routes>
         </BrowserRouter>
     </div>
